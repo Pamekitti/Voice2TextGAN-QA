@@ -1,0 +1,3 @@
+[submodule "AltoGPT/speech2text_module/libraries/whisper"]
+	path = AltoGPT/speech2text_module/libraries/whisper
+	url = https://github.com/openai/whisper.git
