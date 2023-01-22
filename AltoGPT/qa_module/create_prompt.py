@@ -1,7 +1,7 @@
 import tiktoken
 import numpy as np
 import pandas as pd
-from AltoGPT.embeddings import get_embedding
+from AltoGPT.qa_module.embeddings import get_embedding
 
 
 """

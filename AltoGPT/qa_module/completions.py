@@ -1,8 +1,8 @@
 import openai
-from config import completion_gpt3
-from AltoGPT.create_prompt import *
+from config import completion_gpt3, api
+from AltoGPT.qa_module.create_prompt import *
 
-openai.api_key = "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"
+openai.api_key = api.open_ai_api
 COMPLETIONS_MODEL = completion_gpt3.id
 
 COMPLETIONS_API_PARAMS = {
