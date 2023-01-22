@@ -1,0 +1,179 @@
+title,heading,content
+How many chillers are there in this chiller plant,How many chillers are there in this chiller plant,How many chillers are there in this chiller plant? There are a total of 7 chillers in Chamchuri square chiller plant. 6 of which are Trane centrifugal chillers while another one is Trane VSD screw-compressor chiller
+What are the cooling capacities of chillers,What are the cooling capacities of chillers,"What are the cooling capacities of chillers? There are four 1000-TR chillers, two 700-TR chillers, and one 350-RT chiller."
+What is the type of water loop in CSQ chiller plant?,What is the type of water loop in CSQ chiller plant?,"What is the type of water loop in CSQ chiller plant? In CSQ, the pump system is a primary-secondary system where primary chilled water pump (PCHP) delivers warm water into chillers and secondary chilled water pumps (SCHP) pump water across every floor of the building."
+How many pumps are there?,How many pumps are there?,"How many pumps are there? There are a total of 36 pumps in Chamchuri square chiller plant. 12 Each for PCHP, SCHP, and CDP respectively"
+How many cooling towers are there?,How many cooling towers are there?,"How many cooling towers are there? There are 4 main cooling towers that are being used during normal operation. Apart from that, there are 12 more standby cooling towers ready for emergency."
+Who operates this chiller plant?,Who operates this chiller plant?,Who operates this chiller plant? Chamchuri square chiller plant is being operated by BanpuNext-Ecoserve team with talented operators and engineers.
+What is the peak building load of this site?,What is the peak building load of this site?,"What is the peak building load of this site? Last year, the building load of CSQ chiller plant peaked on around mid of April, at 3221.8 TR so the probable peak should occur around 3000 TR"
+What is the minimum building load?,What is the minimum building load?,"What is the minimum building load? As the offices and plaza are both closed during night time, the remaining load is only residential area with the load magnitude of  around 100 TR"
+The current building load is 1680 TR. Whice chillers I should operate?,The current building load is 1680 TR. Whice chillers I should operate?,"The current building load is 1680 TR. Whice chillers I should operate? With the load of 1680 TR, it is sufficient to run 1000-TR and 700-TR for maintaining optimal cooling process."
+What is the history of this chiller plant?,What is the history of this chiller plant?,"What is the history of this chiller plant? Previously, the plant was divided into 2 distinct plants: one plant is used to serve cooling for plaza while another provides cooling for offices and residence. However, both plants were later merged into one single plant with added heat exchangers for transfering heat to the second chilled water loop"
+Can you provide summary for CSQ chiller plant?,Can you provide summary for CSQ chiller plant?,"Can you provide summary for CSQ chiller plant? The Chamchuri Square (CSQ) chiller plant is a cooling facility that is equipped with 7 chillers. 6 of which are Trane centrifugal chillers while another one is Trane VSD screw-compressor chiller. The cooling capacities of the chillers are 4 1000-TR chillers, 2 700-TR chillers, and 1 350-RT chiller. The chiller plant utilizes a primary-secondary water loop system where warm water is delivered into the chillers by primary chilled water pumps (PCHP) and cooled water is pumped across each floor of the building by secondary chilled water pumps (SCHP). The chiller plant has a total of 36 pumps, 12 for PCHP, 12 for SCHP, and 12 for CDP. 4 main cooling towers are used during normal operation and 12 standby cooling towers are ready for emergency. The chiller plant is operated by BanpuNext-Ecoserve team with talented operators and engineers. The building load of CSQ chiller plant peaked last year on around mid of April at 3221.8 TR and the minimum building load is around 100 TR during night time when offices and plaza are closed. Previously, the plant was divided into 2 distinct plants but later merged into one single plant with added heat exchangers for transfering heat to the second chilled water loop."
+What sensors have already been installed in the plant?,What sensors have already been installed in the plant?,"What sensors have already been installed in the plant? There are a total of 6 pairs of water temperature sensors that are linked with 6 BTU meters. Apart from that, several analog meters for measuring pressure and temperature can be found across the plant but none of them can be digitally linked to BAS."
+Do you know kW/TR of each chiller?,Do you know kW/TR of each chiller?,"Do you know kW/TR of each chiller? No, there is no flow rate sensor in front of each individual sensor thus it is not possible to exactly calculate for the exact performance of each chiller. However, it is still possible to approximate each individual chiller's efficiency by looking at %RLA or pressure drop in order to estimate the inlet flow rate."
+Are there any ouotdoor weather station at CSQ site?,Are there any ouotdoor weather station at CSQ site?,"Are there any ouotdoor weather station at CSQ site? Yes, the station can measure dry-bulb temperature, relative humidity, and atmospheric pressure."
+What is CSQ?,What is CSQ?,What is CSQ? CSQ is an abbreviation from Chamchuri Square.
+How many risers are there in chamchuri chiller plant?,How many risers are there in chamchuri chiller plant?,"How many risers are there in chamchuri chiller plant? There are a total of 5 risers from the main chilled water header. These include header towards office 1 and 2, residence and plaza."
+What is AI?,What is AI?,"What is AI? AI stands for artificial intelligence, and it can be used to assist chiller plant operation and management in order to boost operators' productivity and working efficiency"
+Which chillers should I run at building load of 720 TR,Which chillers should I run at building load of 720 TR,"Which chillers should I run at building load of 720 TR? Since there are 700-TR chillers in the plant, we can operate the plant with one single 700-TR centrifugal chiller"
+How each equipment in the plant communicates to each other?,How each equipment in the plant communicates to each other?,"How each equipment in the plant communicates to each other? Every device is linked to main gateway located in the control room either by Ethernet or  by RS485 wiring. VSDs can be monitored and controlled through Modbus RTU protocol while non-VSD pumps and cooling towers can be controlled via BACnet protocol. For newly installed chillers, each chiller can be easily accessed with BACnet protocol. Old chillers are still communicating through Trane COMM4 protocol."
+Chamchuri Square building 1st UAT Completion Report,,"We are pleased to present the user acceptance testing (UAT) completion report for the first main page of AltoTech CPMS for the Chamchuri Square building. Figure 1: AltoTech CPMS for Chamchuri Square building. All tested devices passed the acceptance criteria, including digital power meters, BTU meters, cooling towers, pumps, motorized valves, and outdoor weather.
+AltoTech engineers on-site testing with end-user, BanpuNext chiller plant operator. A total of 9 team members participated in this UAT, including mechanical, electrical, data scientist, IoT, and software engineers, as well as a backend developer.
+Cooling tower starters for control/monitor the status of each non-VSD cooling tower. The status light successfully turned from “off” (red) to “on” (green) after the command was sent from the web page.
+"
+Purpose of the document,Purpose of the document,The purpose of this document is to provide a report on the user acceptance testing (UAT) that was conducted on the first main page of the AltoTech CPMS for the Chamchuri Square building.
+Scope of UAT,Scope of UAT,"The purpose of the UAT was to identify any issues or problems with the system and to ensure that it meets the necessary acceptance criteria.
+
+The UAT was conducted by Andaman Lekawat, AltoTech mechanical engineer, in collaboration with   Mr. Thawat Khoha from Banpu Next Ecoserve and included a total of 3 groups of equipment: cooling towers, pumps, and motorized valves. The system was tested for its ability to control both the Modbus VSD and Bacnet control.
+
+All devices that are part of the system being tested:
+Monitor real-time value
+Turning devices on and off
+Change values"
+UAT Overview,"UAT Overview
+
+","Time period
+1-hour time period on 28 December 2022 from 6:30 PM to 7:30 PM
+2.2 Software releases
+Testing was conducted using software version: Alto CPMS v1-2022.52.0
+2.3 Participants
+Mr. Andaman Lekawat, Mechanical Engineer
+Mr. Voramet Chunvattananon, Electrical Engineer
+Mr. Jirayut Chatphet, Senior Data Scientist
+Mr. Saharat Plypech, IoT Engineer
+Mr. Thakorn Swaengkit, Junior IoT Engineer
+Mr. Chanawee Janyakhantikul, Software Engineer
+Mr. Pamekitti Puktalae, Backend Developer
+3. Acceptance Criteria
+The system should be able to monitor the real-time values of all devices being tested
+The system should be able to turn on and off all devices being tested
+The system should be able to change the values of all devices being tested"
+Result additional note. ,Result additional note. ,"Result additional note. CT01-02 and CT01-03 which were previously controlled through VSD are currently controlled by manual with star-delta starters.
+PCHP-09 is currently under maintenance.
+CDP-03 was already removed from the site.
+PCHP 2  3 4 5 have never been used
+SCHP 1 2 have never been used
+MVCH11 manual on one side and auto on another
+The SCHP-03 Modbus address 25 cannot be accessed using an agent or scripts. Instead, it can be polled using the Modscan program approximately 10-20 times, with the data appearing only once. On the other hand, the SCHP-09 Modbus address 32 cannot be accessed using an agent or scripts, but can be successfully polled using the Modscan program. The old CPMS is able to monitor and control both of these addresses."
+Note on secondary chilled water pumps,Note on secondary chilled water pumps,"Note on secondary chilled water pumps:
+SCHP-03 Modbus Address: 25
+Cannot retrieve values using an agent
+Cannot retrieve values using scripts
+Polling with Program Modscan may be successful, but data will only be retrieved once every 10-20 times
+SCHP-09 Modbus Address: 32
+Cannot retrieve values using an agent
+Cannot retrieve values using scripts
+Polling with Program Modscan is successful for retrieving values
+The old CPMS is capable of both monitoring and controlling both SCHP-03 and SCHP-09.
+To ensure a successful second UAT process, we will proactively address the challenges currently faced in retrieving values for both SCHP-03 and SCHP-09. Once these issues have been resolved, we will thoroughly test both pumps during the second UAT process to ensure their proper functioning.
+"
+Test Incidents Summary,Test Incidents Summary,"Test Incidents Summary
+No test incidents were reported during the user acceptance testing (UAT) of the first main page of the AltoTech CPMS for the Chamchuri Square building.
+Testing station where the testers operate, monitor, and control the status of physical equipment within CSQ chiller plant through Alto CPMS
+"
+Web Application Deployment,Web Application Deployment,"Web Application Deployment
+The AltoTech CPMS software has been installed on our local server and connected to the local network. In order to access the software, users must connect to the network and navigate to the application via their web browser by entering the following address: http://192.168.1.28:3000 with username: csq, and password: P@ssword123. However, the previous application still can be accessed via http://192.168.1.123:8080/ or http://charmchuri.homeip.net:8080/ with the same configuration and be used to control and monitor all devices at Chamchuri Square floor 11, Chiller plant.
+"
+Project Next steps,Project Next steps,"Next steps
+The next steps in the user acceptance testing process for the AltoTech CPMS for the Chamchuri Square building will involve testing the chillers. These chillers have not yet been included in the testing scope, and it is important to ensure that they are functioning correctly before the system is released for use. Also, SCHP03 and SCHP09 are yet to be successfully tested due to communication difficulties between AltoTech CPMS and the hardware. We will seek to find the solution for this problem as well before the next submission and UAT.
+
+To test the chillers, the second round of UAT will be conducted in early January 2023. This round of testing will focus specifically on the chillers and will ensure that they are functioning as expected and meeting the necessary acceptance criteria. By conducting this additional round of testing, we can ensure that the entire system is functioning properly and is ready for use.
+
+The next steps in the user acceptance testing process for the AltoTech CPMS for the Chamchuri Square building will involve testing the chillers. These chillers have not yet been included in the testing scope, and it is important to ensure that they are functioning correctly before the system is released for use. Also, SCHP03 and SCHP09 are yet to be successfully tested due to communication difficulties between AltoTech CPMS and the hardware. We will seek to find the solution for this problem as well before the next submission and UAT.
+
+To test the chillers, the second round of UAT will be conducted in early January 2023. This round of testing will focus specifically on the chillers and will ensure that they are functioning as expected and meeting the necessary acceptance criteria. By conducting this additional round of testing, we can ensure that the entire system is functioning properly and is ready for use.
+"
+"gChamchuri Square building
+2nd UAT Completion Report","Chamchuri Square building
+2nd UAT Completion Report
+","gChamchuri Square building
+2nd UAT Completion Report. Since the first UAT, our team has made several updates to the system, including the implementation of new pipes with color-matching to the real ones and the reduction of the size of the 350 TR chiller to be smaller than other, larger units. Additionally, we have implemented the ability to adjust chiller parameters, including on/off set point values.
+
+To ensure the success of the UAT, our team conducted various testing activities, including the use of a BACnet to test the values of the chillers. During these tests, we controlled several parameters, including the Chiller Set Point, On/Off status of the chiller, and the percentage current limit.
+
+This comprehensive document details these testing activities, including any additional details such as data points and controls."
+Important issue,Important issue,"Important issue
+The issue at hand is the outdated Comm4 protocol, which is no longer supported by Trane. While we can still retrieve data via the legacy CPMS, Niagara, we are faced with a lack of documentation for the old chiller, making it difficult to write code for the interface.
+
+The new chiller with a BACnet IP connector through a switch can enter the 192.168.10.xxx band without any problem.
+
+
+To address this issue, we have considered the following solutions:
+
+[Probability of success < 40%] We will explore using Wireshark to sniff packets and hack into COMM4 via RS485 to see if it works. If successful, this would enable us to write code for the interface, cutting out the original Niagara and using AltoTech software completely.
+
+
+[Probability of success < 70% (requires payment fees for Niagara software license)] If Wireshark and hack don't work, our next option is to run both Alto CPMS in parallel with Niagara. The original Niagara will only pull data from the old chillers, while the others will be moved to the Alto CPMS. 
+
+With this option, we need to install MQTT driver and JSON toolkit into the existing Niagara setting in order to enable MQTT communication between existing IoT gateway (running Niagara) and the new IoT gateway (running Alto CPMS).  
+
+To do this, we will need to purchase a JSON toolkit license and run the Niagara MQTT driver. However, before installation, we will need to check if the original MA license for Niagara has expired. If it has, the MA contract must be renewed in order to install the JSON toolkit.
+
+
+[Probability of success < 50% (require investment on controller hardware, installation, and commissioning fees from Trane)] We will upgrade the old chillers to ensure compatibility with current communication protocols. This includes identifying and implementing the most cost-efficient solution to convert the old chillers to communicate using Modbus or BACnet, in order to resolve ongoing issues. The candidate hardware choices are Trane's SymbioTM Controls and/or Trane’s UC800.
+
+
+[Probability of success < 100%(NOW DONE)] Finally, if all else fails, we will need to isolate the old chiller altogether and create a new dashboard so that only the old chiller remains in Niagara. This means that operators will need to view two screens in parallel. However, we will try to make the data display in the Alto CPMS as much as possible to minimize the confusion."
+Purpose of the second UAT document,Purpose of the second UAT document,"Purpose of the second UAT document
+This document outlines the results of the second user acceptance testing (UAT) for the first main page of the AltoTech CPMS, which is responsible for controlling the new chillers, pumps, valves, and cooling towers in the Chamchuri Square building. The purpose of this UAT was to verify that the system functions as expected and meets the requirements of the users, as well as to identify any potential issues or problems. The purpose of the UAT was to identify any issues or problems with the system and to ensure that it meets the necessary acceptance criteria.
+
+The UAT was conducted by Mr. Andaman Lekawat, an AltoTech mechanical engineer, in collaboration with Mr. Nuttapong Narkwongwarn from BanpuNext EcoServe. To ensure the success of the UAT, various testing activities were conducted, including the use of a BACnet to test the values of the chillers.
+
+The chillers being tested included the ability to
+Monitor real-time values
+Turn devices on and off
+Change values
+"
+2nd UAT Overview,2nd UAT Overview,"2nd UAT Overview
+2.1 Time period
+2-hour time period on 12 January 2023 from 3:00PM to 5:00PM
+2.2 Software releases
+Testing was conducted using software version: Alto CPMS v1-2022.52.1
+2.3 Participants
+Mr. Andaman Lekawat, Mechanical Engineer
+Mr. Jirayut Chatphet, Senior Data Scientist
+Mr. Saharat Plypech, IoT Engineer
+Mr. Thakorn Swaengkit, Junior IoT Engineer
+"
+2nd UAT New update,2nd UAT New update,"2nd UAT New update
+3.1 Main page
+
+Figure 4, an updated graphics for Alto CPMS v1-2022.52.1
+
+
+The final graphics have been updated with the following modifications:
+The pump has been changed from horizontal to vertical orientation.
+The pipe color has been updated to match the actual pipe color.
+The size of the 350 TR screw chiller has been reduced to be smaller than the centrifugal chillers.
+The CSQ and BanpuNext logos have been added.
+A popup has been implemented to open the original CPMS for old chillers. (and add “Please update chillers setpoints from the previous website”
+The color of the circles next to each piece of equipment is used to indicate its status. A red circle means that the equipment is offline, while a green one means it is online.
+
+If you notice a yellow symbol, it indicates that the equipment is malfunctioning and requires an operator's inspection."
+Network,Network,"Network
+
+To allow communication between our Alto CPMS and three new chillers, we installed a network switch. This required the installation of a new electrical cabinet and connecting the device using Ethernet cables.
+
+The installation included three 20-meter Ethernet cables, a network switch with six ports (3 inputs and 1 output, with 3 spare ports), an electrical cabinet, and a flex pipe for proper cable wiring."
+Implement a Time-of-Use (TOU) page,Implement a Time-of-Use (TOU) page,"Implement a Time-of-Use (TOU) page.
+Mr. Nuttapong wil consult with Ajarn Sombat to determine how to charge for TOU electricity and how to display it on the dashboard. A summary of the requirements will be provided by Mr. Nuttapong.
+
+Some examples of current requirements
+
+
+Calculation of 4.2.2 TOU rate electricity bills according to the MEA guidelines, utilizing data from the five main meters.
+
+
+Figure 8, example of calculating TOU 4.2.2 electricity bills. (Source: https://www.mea.or.th/aboutelectric/116/280/form/42)
+
+
+This calculation should include on-peak kWh, on-peak Baht, off-peak kWh, off-peak Baht, peak demand kW, and peak demand Baht.
+
+The FT should also be updated with real values from the MEA, and have the ability to export all relevant TOU data for further analysis."
+BTU hourly export,BTU hourly export,"BTU hourly export. We need to implement an export feature that allows for the creation of an Excel sheet, as shown in the figure below. The spreadsheet should contain hourly tonnage data for the following: BTU 1 Resident, BTU 2 OFFICE 1, BTU 4 OFFICE 2, and BTU 5 HEX, as well as hourly kWh data for DP-CH-1, DP-CH-2, DP-CH-3, DP-CH-4, and DP-CH-5. These values will be used to calculate the efficiency of the chiller plant, measured in kW/TR.
+
+
+
+Figure 9, a real Excel sheet, titled “01. CSQ_BTU_kWh_Hourly__10_Jan_2023”, that building operators specifically created for analyzing chiller plant performance. The spreadsheet is used on a monthly basis, with each sub-tab representing a day within that specific month.
+"
