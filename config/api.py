@@ -1,0 +1,3 @@
+open_ai_api = "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"
+exh_api_key = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6ImFuZGFtYW4ubGVrYXdhdEBnbWFpbC5jb20ifQ.xpW2ZnkPx5Scd9V5lgt-uAXSCmWcMxwEVpf8ZPC9NxstClM0UzrcX-6OlMW7fwke0Prt3aSMMd7fzVaqF8wlwA"
+exh_api_endpoint = "https://api.exh.ai/animations/v1/generate_lipsync"
