@@ -75,6 +75,8 @@ def generate_video_from_text(text):
     final_video = concatenate_videoclips(video_obj_list)
     final_video.write_videofile("AltoGPT/assets/bot-videos/final_video.mp4")
 
+    final_video.audio.write_audiofile("AltoGPT/assets/bot-videos/final_video.mp3")
+
 
 def generate_answer_video_from_question(question):
     answer = answer_query_with_context(question, df, document_embeddings, diag=False)
@@ -82,8 +84,8 @@ def generate_answer_video_from_question(question):
     generate_video_from_text(answer)
 
 
-if __name__ == "__main__":
-    query = ''
+def generate_answer(voice2text_queue, qa_parent):
+    query = voice2text_queue.get()
     while True:
         query = input('\nEnter your Answer: ')
         if query == 'exit':
@@ -92,3 +94,4 @@ if __name__ == "__main__":
             response = answer_query_with_context(query, df, document_embeddings, diag=False)
             print(f"\nQ: {query}\nA: {response}")
             generate_video_from_text(response)
+            qa_parent.send(response)

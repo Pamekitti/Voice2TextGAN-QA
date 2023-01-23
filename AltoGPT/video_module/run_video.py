@@ -3,17 +3,16 @@ import pygame
 
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load(r"D:/AltoTech/ALTO_CERO/Alto_Playground/epjom-bot/AltoGPT/assets/bot-videos/Elon_listening.mp3")
+pygame.mixer.music.load(r"/AltoGPT/assets/bot-videos/Elon_listening.mp3")
 
 # TODO: Move to config file
 CONFIG = {
-    "idle_video_path": r"D:/AltoTech/ALTO_CERO/Alto_Playground/epjom-bot/AltoGPT/assets/bot-videos/Elon_idle.mp4",
-    "listening_video_path": r"D:/AltoTech/ALTO_CERO/Alto_Playground/epjom-bot/AltoGPT/assets/bot-videos/Elon_listening.mp4",
-    "talking_video_path": None,
-    "listening_audio_path": r"D:/AltoTech/ALTO_CERO/Alto_Playground/epjom-bot/AltoGPT/assets/bot-videos/Elon_listening.mp3",
-    "talking_audio_path": None,
+    "idle_video_path": r"/AltoGPT/assets/bot-videos/Elon_idle.mp4",
+    "listening_video_path": r"/AltoGPT/assets/bot-videos/Elon_listening.mp4",
+    "talking_video_path": r"/AltoGPT/assets/bot-videos/final_video.mp4",
+    "listening_audio_path": r"/AltoGPT/assets/bot-videos/Elon_listening.mp3",
+    "talking_audio_path": r"/AltoGPT/assets/bot-videos/final_video.mp3",
 }
-
 
 class FrameHandler:
     def __init__(self, config):
@@ -84,14 +83,30 @@ class FrameHandler:
         self.fps = 40
 
 
-def run_video():
+def run_video(listening_pipe_conn, talking_pipe_conn):
     print("Starting Video...")
     frame_handler = FrameHandler(CONFIG)
     frame_handler.fps = 40
 
+    previous_frame = 'idle'
     while True:
 
+        # Step 1: Check for new status from Voice2Text Pipeline
+        if listening_pipe_conn.poll():
+            frame_handler.update_frame_status("listening")
+        elif talking_pipe_conn.poll():
+            frame_handler.update_frame_status("talking")
+
+        # Step 2: Get frame
         frame = frame_handler.get_frame()
+
+        # Check whether the listening animation has already ended
+        if frame_handler.frame_status == 'idle' and previous_frame == 'listening':
+            listening_pipe_conn.recv()
+        elif frame_handler.frame_status == 'idle' and previous_frame == 'talking':
+            talking_pipe_conn.recv()
+
+        previous_frame = frame_handler.frame_status
 
         if frame is None:
             continue
@@ -101,17 +116,8 @@ def run_video():
 
         if cv2.waitKey(int(1000 / frame_handler.fps)) & 0xFF == ord('q'):
             break
-        # TODO: Add a way to update frame status
-        # elif RECEIVE_MESSAGE.state == 'listening':
-        #     frame_handler.update_frame_status("listening")
-        # elif RECEIVE_MESSAGE.state == 'talking':
-        #     frame_handler.update_frame_status("talking")
 
     frame_handler.idle_cap.release()
     frame_handler.listening_cap.release()
     frame_handler.talking_cap.release()
     cv2.destroyAllWindows()
-
-
-if __name__ == "__main__":
-    run_video()

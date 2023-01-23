@@ -4,7 +4,6 @@ import pyaudio
 from audio_stream import AudioStream
 from alto_whisper import AltoWhisper
 
-
 # config to postprocess starting command
 replace_alto = ["otto", "out", "ado", "all dough"]
 replace_javis = ["chavis", "jowist", "john", "javith"]
