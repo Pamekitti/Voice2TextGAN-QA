@@ -10,7 +10,9 @@ class AltoWhisper:
     def __init__(self, model_size: str, audio_config: dict):
         self.model_size = model_size
         self.model = self.load_model(self.model_size)
-        self.audio_config = audio_config
+        self.audio_config = audio_config\
+
+        self.model = self.model.cuda()
     
     def load_model(self, model_size):
         model_path = f"checkpoints/{model_size}.pt"
@@ -27,17 +29,18 @@ class AltoWhisper:
                 download_root="checkpoints",
                 in_memory=True
                 )
+
         return model
     
     def transcribe_file(self, audio_path, language="en"):
         audio = whisper.load_audio(audio_path)
         audio = whisper.pad_or_trim(audio)
 
-        mel = whisper.log_mel_spectrogram(audio)
+        mel = whisper.log_mel_spectrogram(audio).to(self.model.device)
         options = whisper.DecodingOptions(
             task="transcribe",
             language=language,
-            fp16=False)
+            fp16=True)
         result = whisper.decode(self.model, mel, options)
         return result.text
 

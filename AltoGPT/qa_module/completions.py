@@ -8,7 +8,7 @@ COMPLETIONS_MODEL = completion_gpt3.id
 COMPLETIONS_API_PARAMS = {
     # We use temperature of 0.0 because it gives the most predictable, factual answer.
     "temperature": 0.5,
-    "max_tokens": 400,
+    "max_tokens": 200,
     "model": COMPLETIONS_MODEL,
 }
 

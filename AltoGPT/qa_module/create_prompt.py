@@ -17,7 +17,7 @@ embeddings locally. If you have a larger dataset, consider using a vector search
 """
 
 
-def vector_similarity(x: list[float], y: list[float]):
+def vector_similarity(x, y):
     """
     Returns the similarity between two vectors.
 
@@ -26,8 +26,7 @@ def vector_similarity(x: list[float], y: list[float]):
     return np.dot(np.array(x), np.array(y))
 
 
-def order_document_sections_by_query_similarity(query: str, contexts: dict[(str, str), np.array]) -> list[
-    (float, (str, str))]:
+def order_document_sections_by_query_similarity(query: str, contexts):
     """
     Find the query embedding for the supplied query, and compare it against all of the pre-calculated document embeddings
     to find the most relevant sections.

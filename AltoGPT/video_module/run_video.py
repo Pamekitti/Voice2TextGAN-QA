@@ -1,22 +1,26 @@
+import os
+
 import cv2
 import pygame
 
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load(r"/AltoGPT/assets/bot-videos/Elon_listening.mp3")
+pygame.mixer.music.load(r"AltoGPT/assets/bot-videos/Elon_listening.mp3")
 
 # TODO: Move to config file
 CONFIG = {
-    "idle_video_path": r"/AltoGPT/assets/bot-videos/Elon_idle.mp4",
-    "listening_video_path": r"/AltoGPT/assets/bot-videos/Elon_listening.mp4",
-    "talking_video_path": r"/AltoGPT/assets/bot-videos/final_video.mp4",
-    "listening_audio_path": r"/AltoGPT/assets/bot-videos/Elon_listening.mp3",
-    "talking_audio_path": r"/AltoGPT/assets/bot-videos/final_video.mp3",
+    "idle_video_path": r"AltoGPT/assets/bot-videos/Elon_idle.mp4",
+    "listening_video_path": r"AltoGPT/assets/bot-videos/Elon_listening.mp4",
+    "talking_video_path": r"AltoGPT/assets/bot-videos/final_video.mp4",
+    "listening_audio_path": r"AltoGPT/assets/bot-videos/Elon_listening.mp3",
+    "talking_audio_path": r"AltoGPT/assets/bot-videos/final_video.mp3",
 }
+
 
 class FrameHandler:
     def __init__(self, config):
         self.frame_status = "idle"  # ['idle', 'listening', 'talking']
+        self.config = config
 
         # Parse config
         self.idle_cap = cv2.VideoCapture(config["idle_video_path"])
@@ -28,6 +32,8 @@ class FrameHandler:
         self.talking_audio_path = config["talking_audio_path"]
 
         self.active_audio = None
+
+        self.just_reloaded = False
 
     def get_frame(self):
 
@@ -45,13 +51,21 @@ class FrameHandler:
                 self.active_audio = None
             return frame
         elif self.frame_status == "talking":
+            if not self.just_reloaded:
+                self.reload_talking_cap()
             self.start_audio_track()
             ret, frame = self.talking_cap.read()
             if not ret:
                 self.talking_cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
                 self.frame_status = "idle"
                 self.active_audio = None
+                self.just_reloaded = False
+
             return frame
+
+    def reload_talking_cap(self):
+        self.talking_cap = cv2.VideoCapture(self.config["talking_video_path"])
+        self.just_reloaded = True
 
     def start_audio_track(self):
         if pygame.mixer.music.get_busy():
@@ -80,13 +94,10 @@ class FrameHandler:
         elif self.frame_status == "listening":
             self.fps = self.listening_cap.get(cv2.CAP_PROP_FPS)
 
-        self.fps = 40
 
-
-def run_video(listening_pipe_conn, talking_pipe_conn):
+def run_video(listening_pipe_conn, talking_pipe_conn, answer_child):
     print("Starting Video...")
     frame_handler = FrameHandler(CONFIG)
-    frame_handler.fps = 40
 
     previous_frame = 'idle'
     while True:
@@ -105,6 +116,10 @@ def run_video(listening_pipe_conn, talking_pipe_conn):
             listening_pipe_conn.recv()
         elif frame_handler.frame_status == 'idle' and previous_frame == 'talking':
             talking_pipe_conn.recv()
+            answer_child.send('done')
+            for temp_file in os.listdir('AltoGPT/assets/bot-videos'):
+                if temp_file.startswith('temp'):
+                    os.remove(os.path.join('AltoGPT/assets/bot-videos', temp_file))
 
         previous_frame = frame_handler.frame_status
 
