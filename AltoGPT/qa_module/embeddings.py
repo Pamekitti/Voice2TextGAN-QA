@@ -20,6 +20,8 @@ def preprocess_for_embeddings():
     csv_path = [
         "AltoGPT/assets/csq-data/csq_knowledge_base.csv",
         "AltoGPT/assets/csq-data/chiller_knowledge_base.csv",
+        "AltoGPT/assets/csq-data/alto_knowledge_base.csv",
+        "AltoGPT/assets/csq-data/others_knowledge_base.csv"
     ]
 
     df = pd.concat([read_csv(path) for path in csv_path])
@@ -82,7 +84,3 @@ def load_embeddings(fname: str) -> dict[tuple[str, str], list[float]]:
     return {
         (r.title, r.heading): [r[str(i)] for i in range(max_dim + 1)] for _, r in df.iterrows()
     }
-
-
-
-

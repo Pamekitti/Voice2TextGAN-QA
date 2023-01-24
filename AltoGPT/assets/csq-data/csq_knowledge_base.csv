@@ -31,9 +31,7 @@ All devices that are part of the system being tested:
 Monitor real-time value
 Turning devices on and off
 Change values"
-UAT Overview,"UAT Overview
-
-","Time period
+UAT Overview,UAT Overview,"Time period
 1-hour time period on 28 December 2022 from 6:30 PM to 7:30 PM
 2.2 Software releases
 Testing was conducted using software version: Alto CPMS v1-2022.52.0
