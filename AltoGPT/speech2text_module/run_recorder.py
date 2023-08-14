@@ -1,9 +1,11 @@
 import time
-
 import pyaudio
+import openai
 
-from alto_whisper import AltoWhisper
+# from alto_whisper import AltoWhisper
 from audio_stream import AudioStream
+
+openai.api_key = "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"  # Eyp's key
 
 
 def run_recorder(hey_alto_pipe, answer_pipe, voice2text_queue):
@@ -24,12 +26,11 @@ def run_recorder(hey_alto_pipe, answer_pipe, voice2text_queue):
         command_duration=5
     )
     audio_config = stream.get_config()
-
-    # class for inference whisper
-    alto_whisper = AltoWhisper(
-        model_size="medium",
-        audio_config=audio_config
-    )
+    
+    def transcribe_chunk(frames: list, language="en", audio_path='audio.wav'):
+        AudioStream.create_chunk_wav(frames, audio_path, audio_config)
+        audio_file = open(audio_path, "rb")
+        return openai.Audio.transcribe("whisper-1", audio_file, language=language)
 
     print('start recording ...')
     while True:
@@ -37,7 +38,7 @@ def run_recorder(hey_alto_pipe, answer_pipe, voice2text_queue):
         for _, frames in iter(stream):
             # waiting for `Hey Alto`
             if not stream.active_status:
-                result = alto_whisper.transcribe_chunk(frames, language="en")
+                result = transcribe_chunk(frames, language="en")
                 print('transcribe (wait): ', result)
             
                 postprocess_result = result.lower().replace(',', '').replace('hello', 'hey')
@@ -60,7 +61,7 @@ def run_recorder(hey_alto_pipe, answer_pipe, voice2text_queue):
             else:
                 start = time.time()
                 print('Transcribing question from audio...')
-                result = alto_whisper.transcribe_chunk(frames, language="en")
+                result = transcribe_chunk(frames, language="en")
                 print(f'Transcribing question from audio... DONE [Time taken: {time.time() - start:.1f} secs]')
 
                 result = result.lower().replace('how can i help you', '').replace('?', '')
