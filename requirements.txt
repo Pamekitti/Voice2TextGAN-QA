@@ -1,0 +1,30 @@
+# Core Libraries
+torch
+tqdm
+more-itertools
+transformers>=4.19.0
+ffmpeg-python==0.2.0
+
+# Audio Processing
+pyaudio
+wave
+
+# Data Manipulation
+numpy==1.24.1
+pandas==1.5.3
+
+# AI and Language Processing
+openai==0.27.8
+
+# Computer Vision
+opencv-python==4.7.0.68
+
+# Web Requests
+requests==2.28.2
+
+# Tokenization
+tiktoken==0.1.2
+
+# Multimedia
+moviepy
+pygame
